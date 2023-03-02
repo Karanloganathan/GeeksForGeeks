@@ -1,0 +1,33 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG
+{
+    public static void main(String[] args) throws IOException
+    {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int T = Integer.parseInt(br.readLine().trim());
+        while(T-->0)
+        {
+            long n = Long.parseLong(br.readLine().trim());            
+            Solution ob = new Solution();
+            long ans = ob.reverse_digit(n);
+            System.out.println(ans);
+        }
+    }
+
+  //main solution
+class reverse
+{
+    public long reverse_digit(long n)
+    {
+        // Code here
+       long rev=0,sum=0;
+        while(n>0){
+            rev=n%10;
+            sum=sum*10+rev;
+            n=n/10;
+        }
+        return sum;
+    }
+}
